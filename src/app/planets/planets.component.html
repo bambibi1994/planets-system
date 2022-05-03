@@ -1,0 +1,31 @@
+<h2>Planets:</h2>
+<ul class="planets">
+  <li *ngFor="let planet of planets" (click)="onSelect(planet)">
+    <span class="badge">{{planet.id}}</span>
+    {{planet.name}} |
+    <i>{{planet.diameter}} Km</i> |
+    <i>{{planet.lengthofyear}} days</i>
+  </li>
+</ul>
+
+<div *ngIf="selectedPlanet">
+
+  <h2>{{selectedPlanet.name}} Details</h2>
+  <div><span>Id: </span>{{selectedPlanet.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="selectedPlanet.name" placeholder="name" />
+    </label>
+  </div>
+  <div>
+    <label>Diameter:
+      <input [(ngModel)]="selectedPlanet.diameter" placeholder="diameter" /> Km
+    </label>
+  </div>
+  <div>
+    <label>Length of Year:
+      <input [(ngModel)]="selectedPlanet.lengthofyear" placeholder="lengthofyear" /> Days
+    </label>
+  </div>
+
+</div>
